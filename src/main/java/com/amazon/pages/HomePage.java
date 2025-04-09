@@ -26,11 +26,11 @@ public class HomePage extends BasePage {
         set(searchField, search);
     }
 
-    public static ProductsPage productsListing() {
+    public static ProductsListingPage productsListing() {
         click(searchButton);
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
         wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath("(//span[@class='a-dropdown-prompt'])[1]")));
-        return new ProductsPage();
+        return new ProductsListingPage();
 
     }
 }
