@@ -8,7 +8,7 @@ import java.time.Duration;
 public class LoginPage extends BasePage{
 
     private static By usernameField = By.id("ap_email_login");
-    private static By continueButton = By.xpath("//input[@type='submit']");
+    private static By continueButton = By.id("continue");
 
     public static void setUsername(String username){
         set(usernameField, username);
