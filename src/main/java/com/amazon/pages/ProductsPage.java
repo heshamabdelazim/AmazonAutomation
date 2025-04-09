@@ -5,12 +5,12 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import java.time.Duration;
 
-import static com.amazon.pages.BasePage.driver;
 
-public class ProductsPage {
-    public static By searchProduct = By.xpath("//span[@class='a-color-state a-text-bold']");
+public class ProductsPage extends BasePage {
 
-    public static boolean searchProductText() {
+    public static By searchProduct = By.xpath("(//span[@class='a-dropdown-prompt'])[1]");
+
+    public static boolean isSearchProductVisible() {
         return driver.findElement(searchProduct).isDisplayed();
     }
 }

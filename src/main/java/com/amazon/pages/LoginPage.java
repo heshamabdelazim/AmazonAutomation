@@ -17,7 +17,7 @@ public class LoginPage extends BasePage{
     public static ContinuePage signinButton(){
         click(continueButton);
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
-        wait.until(ExpectedConditions.presenceOfElementLocated(By.id("ap_password")));
+        wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath("ap_password")));
         return new ContinuePage();
     }
 

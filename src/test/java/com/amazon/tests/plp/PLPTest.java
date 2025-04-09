@@ -14,8 +14,11 @@ public class PLPTest extends BaseTest {
         // Step 1: Set search product
         com.amazon.pages.HomePage.setSearch("iphone16 pro max");
 
-        // Step 4: Confirm login success
-        Assert.assertTrue(com.amazon.pages.ProductsPage.searchProductText(), "Login failed: Account link not visible.");
+        // Step 2: Click search
+        com.amazon.pages.HomePage.productsListing();
+
+        // Step 3: Confirm PLP
+        Assert.assertTrue(com.amazon.pages.ProductsPage.isSearchProductVisible(), "Can not find product");
 
     }
 }

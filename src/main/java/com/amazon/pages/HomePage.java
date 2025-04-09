@@ -1,6 +1,10 @@
 package com.amazon.pages;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
+
+import java.time.Duration;
 
 public class HomePage extends BasePage {
 
@@ -22,8 +26,10 @@ public class HomePage extends BasePage {
         set(searchField, search);
     }
 
-    public ProductsPage productsListing() {
+    public static ProductsPage productsListing() {
         click(searchButton);
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+        wait.until(ExpectedConditions.presenceOfElementLocated(By.id("(//span[@class='a-dropdown-prompt'])[1]")));
         return new ProductsPage();
 
     }
