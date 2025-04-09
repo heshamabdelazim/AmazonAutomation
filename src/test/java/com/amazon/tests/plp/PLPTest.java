@@ -18,7 +18,7 @@ public class PLPTest extends BaseTest {
         com.amazon.pages.HomePage.productsListing();
 
         // Step 3: Confirm PLP
-        Assert.assertTrue(com.amazon.pages.ProductsPage.isSearchProductVisible(), "Can not find product");
+        Assert.assertTrue(com.amazon.pages.ProductsPage.isSearchResultsVisible(), "Can not find product");
 
     }
 }

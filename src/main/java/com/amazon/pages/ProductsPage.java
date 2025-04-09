@@ -8,9 +8,9 @@ import java.time.Duration;
 
 public class ProductsPage extends BasePage {
 
-    public static By searchProduct = By.xpath("(//span[@class='a-dropdown-prompt'])[1]");
+    public static By searchResults = By.xpath("//span[normalize-space()='1-48 of 230 results for']");
 
-    public static boolean isSearchProductVisible() {
-        return driver.findElement(searchProduct).isDisplayed();
+    public static boolean isSearchResultsVisible() {
+        return driver.findElement(searchResults).isDisplayed();
     }
 }
