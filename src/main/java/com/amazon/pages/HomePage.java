@@ -29,7 +29,7 @@ public class HomePage extends BasePage {
     public static ProductsPage productsListing() {
         click(searchButton);
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
-        wait.until(ExpectedConditions.presenceOfElementLocated(By.id("(//span[@class='a-dropdown-prompt'])[1]")));
+        wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath("(//span[@class='a-dropdown-prompt'])[1]")));
         return new ProductsPage();
 
     }
