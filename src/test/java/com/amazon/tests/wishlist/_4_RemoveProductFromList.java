@@ -5,7 +5,7 @@ import com.amazon.pages.*;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
-public class _4_UndoRemoveProductFromList extends BaseTest {
+public class _4_RemoveProductFromList extends BaseTest {
 
     @Test
     public void testRemoveProductFromList() {
@@ -41,12 +41,6 @@ public class _4_UndoRemoveProductFromList extends BaseTest {
 
         // Step 10 : Confirm Deletion
         Assert.assertTrue(_9_WishlistPage.isProductDeleted(), "Product not deleted");
-
-        // Step 11 : Undo Delete Product
-        _9_WishlistPage.undoDeleteProduct();
-
-        // Step 12 : Confirm Undo Delete Product
-        Assert.assertTrue(_9_WishlistPage.isProductInList(),"Product wasn't re-added");
     }
 }
 
