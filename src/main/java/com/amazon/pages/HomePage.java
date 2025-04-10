@@ -11,6 +11,7 @@ public class HomePage extends BasePage {
     public static By accountLink = By.id("nav-link-accountList");
     public static By searchField = By.id("twotabsearchtextbox");
     public static By searchButton = By.id("nav-search-submit-button");
+    public static By accountPage = By.id("//span[normalize-space()='Account & Lists']");
 
     public static boolean isAccountLinkVisible() {
         return driver.findElement(accountLink).isDisplayed();
@@ -26,10 +27,18 @@ public class HomePage extends BasePage {
     }
 
     public static ProductsListingPage productsListing() {
-        click(searchButton);
+        click(accountPage);
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
         wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath("(//span[@class='a-dropdown-prompt'])[1]")));
         return new ProductsListingPage();
+
+    }
+
+    public static AccountPage openAccountPage() {
+        click(accountLink);
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+        wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//h1[normalize-space()='Your Account']")));
+        return new AccountPage();
 
     }
 }
