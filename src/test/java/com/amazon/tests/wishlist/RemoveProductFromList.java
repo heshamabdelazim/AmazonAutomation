@@ -3,15 +3,13 @@ package com.amazon.tests.wishlist;
 import com.amazon.base.BaseTest;
 import com.amazon.pages.ContinuePage;
 import com.amazon.pages.LoginPage;
-import com.amazon.pages.ProductsListingPage;
-import com.amazon.pages.WishlistConfirmation;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
-public class OpenWishlist extends BaseTest {
+public class RemoveProductFromList extends BaseTest {
 
     @Test
-    public void testOpenWishlist() {
+    public void testRemoveProductFromList() {
 
         // Step 1: Click Sign-in
         HomePage.signinLink();
@@ -39,6 +37,10 @@ public class OpenWishlist extends BaseTest {
         // Step 8 : Confirm wishlist page
         Assert.assertTrue(com.amazon.pages.WishlistPage.isWishlistPageVisible(), "Wishlist not visible");
 
+        // Step 9 : Delete Product
+
+
+        // Step 10 : Confirm Deletion
     }
 }
 

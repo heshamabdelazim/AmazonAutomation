@@ -42,7 +42,6 @@ public class AddToWishlist extends BaseTest {
         // Step 8: Click Product
         com.amazon.pages.ProductsListingPage.productDetails();
 
-
         // Step 9: Click Add to List
         com.amazon.pages.ProductsListingPage.openWishConfirmation();
 
