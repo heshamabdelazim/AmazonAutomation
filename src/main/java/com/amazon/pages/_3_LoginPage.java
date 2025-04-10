@@ -5,7 +5,7 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import java.time.Duration;
 
-public class LoginPage extends BasePage{
+public class _3_LoginPage extends _1_BasePage {
 
     private static By usernameField = By.id("ap_email_login");
     private static By continueButton = By.id("continue");
@@ -14,11 +14,11 @@ public class LoginPage extends BasePage{
         set(usernameField, username);
     }
 
-    public static ContinuePage signinButton(){
+    public static _4_ContinuePage signinButton(){
         click(continueButton);
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
         wait.until(ExpectedConditions.presenceOfElementLocated(By.id("ap_password")));
-        return new ContinuePage();
+        return new _4_ContinuePage();
     }
 
 }

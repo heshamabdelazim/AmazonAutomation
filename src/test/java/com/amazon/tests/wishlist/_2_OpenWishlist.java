@@ -1,16 +1,15 @@
-package com.amazon.tests.login;
+package com.amazon.tests.wishlist;
 
-import com.amazon.pages._4_ContinuePage;
-import com.amazon.pages._2_HomePage;
-import com.amazon.pages._3_LoginPage;
 import com.amazon.base.BaseTest;
+import com.amazon.pages.*;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
-public class LoginTests extends BaseTest {
+public class _2_OpenWishlist extends BaseTest {
 
     @Test
-    public void testLoginPage() {
+    public void testOpenWishlist() {
+
         // Step 1: Click Sign-in
         HomePage.signinLink();
 
@@ -24,6 +23,18 @@ public class LoginTests extends BaseTest {
 
         // Step 4: Confirm login success
         Assert.assertTrue(_2_HomePage.isAccountLinkVisible(), "Login failed: Account link not visible.");
+
+        // Step 5: Click account link
+        _2_HomePage.openAccountPage();
+
+        // Step 6: Confirm account page
+        Assert.assertTrue(_5_AccountPage.isYourAccountVisible(), "Account page not visible");
+
+        // Step 7 : Open wishlist
+        _5_AccountPage.openWishlistPage();
+
+        // Step 8 : Confirm wishlist page
+        Assert.assertTrue(_9_WishlistPage.isWishlistPageVisible(), "Wishlist not visible");
 
     }
 }

@@ -6,7 +6,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import java.time.Duration;
 
 
-public class ProductsListingPage extends BasePage {
+public class _6_ProductsListingPage extends _1_BasePage {
 
     public static By searchResults = By.xpath("(//span[@class='a-dropdown-prompt'])[1]");
     public static By searchProduct = By.xpath("//span[normalize-space()='iPhone 16 Pro Max (256 GB) - Black Titanium']");
@@ -17,11 +17,11 @@ public class ProductsListingPage extends BasePage {
     }
 
 
-    public static ProductDetailPage productDetails() {
+    public static _7_ProductDetailPage productDetails() {
         click(searchProduct);
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
         wait.until(ExpectedConditions.presenceOfElementLocated(By.id("productTitle")));
-        return new ProductDetailPage();
+        return new _7_ProductDetailPage();
 
     }
 

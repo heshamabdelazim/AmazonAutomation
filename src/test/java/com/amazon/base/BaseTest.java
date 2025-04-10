@@ -1,7 +1,7 @@
 package com.amazon.base;
 
-import com.amazon.pages.BasePage;
-import com.amazon.pages.HomePage;
+import com.amazon.pages._1_BasePage;
+import com.amazon.pages._2_HomePage;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.annotations.AfterClass;
@@ -12,8 +12,8 @@ import java.util.concurrent.TimeUnit;
 public class BaseTest {
 
     protected WebDriver driver;
-    protected BasePage basePage;
-    protected HomePage HomePage;
+    protected _1_BasePage BasePage;
+    protected _2_HomePage HomePage;
     private String url = "https://www.amazon.eg/?language=en_AE";
 
     @BeforeClass
@@ -21,9 +21,9 @@ public class BaseTest {
         driver = new ChromeDriver();
         driver.manage().window().maximize();
         driver.get(url);
-        basePage = new BasePage();
-        basePage.setDriver(driver);
-        HomePage = new HomePage();
+        BasePage = new _1_BasePage();
+        BasePage.setDriver(driver);
+        HomePage = new _2_HomePage();
     }
 
     @AfterClass

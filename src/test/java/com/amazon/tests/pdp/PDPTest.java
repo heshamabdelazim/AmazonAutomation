@@ -1,10 +1,8 @@
 package com.amazon.tests.pdp;
 
 import com.amazon.base.BaseTest;
-import com.amazon.pages.ProductsListingPage;
-import org.testng.Assert;
-import org.testng.annotations.Test;
-import com.amazon.pages.ProductDetailPage;
+import com.amazon.pages._2_HomePage;
+import com.amazon.pages._6_ProductsListingPage;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
@@ -13,16 +11,16 @@ public class PDPTest extends BaseTest {
     public void testPDP() {
 
         // Step 1: Set search product
-        com.amazon.pages.HomePage.setSearch("iphone16 pro max");
+        _2_HomePage.setSearch("iphone16 pro max");
 
         // Step 2: Click search
-        com.amazon.pages.HomePage.openProductsListing();
+        _2_HomePage.openProductsListing();
 
         // Step 3: Confirm PLP
-        Assert.assertTrue(ProductsListingPage.isPLPVisible(), "Can not navigate to PLP");
+        Assert.assertTrue(_6_ProductsListingPage.isPLPVisible(), "Can not navigate to PLP");
 
         // Step 4: Click Product
-        com.amazon.pages.ProductsListingPage.productDetails();
+        _6_ProductsListingPage.productDetails();
 
         // Step 5: Confirm PDP
 

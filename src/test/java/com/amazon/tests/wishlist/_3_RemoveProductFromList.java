@@ -1,14 +1,14 @@
-package com.amazon.tests.account;
+package com.amazon.tests.wishlist;
 
 import com.amazon.base.BaseTest;
 import com.amazon.pages.*;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
-public class AccountTest extends BaseTest {
+public class _3_RemoveProductFromList extends BaseTest {
 
     @Test
-    public void testOpenAccountPage() {
+    public void testRemoveProductFromList() {
 
         // Step 1: Click Sign-in
         HomePage.signinLink();
@@ -28,10 +28,19 @@ public class AccountTest extends BaseTest {
         _2_HomePage.openAccountPage();
 
         // Step 6: Confirm account page
-        _5_AccountPage.isYourAccountVisible();
+        Assert.assertTrue(_5_AccountPage.isYourAccountVisible(), "Account page not visible");
 
+        // Step 7 : Open wishlist
+        _5_AccountPage.openWishlistPage();
 
+        // Step 8 : Confirm wishlist page
+        Assert.assertTrue(_9_WishlistPage.isWishlistPageVisible(), "Wishlist not visible");
 
+        // Step 9 : Delete Product
+        _9_WishlistPage.deleteProduct();
+
+        // Step 10 : Confirm Deletion
+        Assert.assertTrue(_9_WishlistPage.isProductDeleted(), "Product not deleted");
     }
 }
 

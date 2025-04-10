@@ -4,12 +4,12 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
-public class BasePage {
+public class _1_BasePage {
 
     public static WebDriver driver;
 
     public void setDriver(WebDriver driver){
-        BasePage.driver = driver;
+        _1_BasePage.driver = driver;
     }
 
     protected static WebElement find(By locator){

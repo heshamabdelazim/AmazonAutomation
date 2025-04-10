@@ -5,7 +5,7 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import java.time.Duration;
 
-public class HomePage extends BasePage {
+public class _2_HomePage extends _1_BasePage {
 
     private By signinLink = By.id("nav-link-accountList-nav-line-1");
     public static By accountLink = By.id("nav-link-accountList");
@@ -17,28 +17,28 @@ public class HomePage extends BasePage {
         return driver.findElement(accountLink).isDisplayed();
     }
 
-    public LoginPage signinLink() {
+    public _3_LoginPage signinLink() {
         click(signinLink);
-        return new LoginPage();
+        return new _3_LoginPage();
     }
 
     public static void setSearch(String search){
         set(searchField, search);
     }
 
-    public static ProductsListingPage openProductsListing() {
+    public static _6_ProductsListingPage openProductsListing() {
         click(searchButton);
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
         wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath("(//span[@class='a-dropdown-prompt'])[1]")));
-        return new ProductsListingPage();
+        return new _6_ProductsListingPage();
 
     }
 
-    public static AccountPage openAccountPage() {
+    public static _5_AccountPage openAccountPage() {
         click(accountPage);
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
         wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//h1[normalize-space()='Your Account']")));
-        return new AccountPage();
+        return new _5_AccountPage();
 
     }
 }

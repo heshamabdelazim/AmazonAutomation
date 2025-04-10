@@ -5,7 +5,7 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import java.time.Duration;
 
-public class ContinuePage extends BasePage{
+public class _4_ContinuePage extends _1_BasePage {
 
     private static By passwordField = By.id("ap_password");
     private static By signinButton = By.id("signInSubmit");
@@ -14,10 +14,10 @@ public class ContinuePage extends BasePage{
         set(passwordField, password);
     }
 
-    public static HomePage clickContinueButton(){
+    public static _2_HomePage clickContinueButton(){
         click(signinButton);
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
         wait.until(ExpectedConditions.presenceOfElementLocated(By.id("nav-logo-sprites")));
-        return new HomePage();
+        return new _2_HomePage();
     }
 }
