@@ -3,6 +3,7 @@ package com.amazon.tests.wishlist;
 import com.amazon.base.BaseTest;
 import com.amazon.pages.ContinuePage;
 import com.amazon.pages.LoginPage;
+import com.amazon.pages.WishlistPage;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
@@ -38,9 +39,10 @@ public class RemoveProductFromList extends BaseTest {
         Assert.assertTrue(com.amazon.pages.WishlistPage.isWishlistPageVisible(), "Wishlist not visible");
 
         // Step 9 : Delete Product
-
+        com.amazon.pages.WishlistPage.deleteProduct();
 
         // Step 10 : Confirm Deletion
+        Assert.assertTrue(WishlistPage.isProductDeleted(), "Product not deleted");
     }
 }
 

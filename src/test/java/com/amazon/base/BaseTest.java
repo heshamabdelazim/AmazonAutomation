@@ -7,6 +7,8 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 
+import java.util.concurrent.TimeUnit;
+
 public class BaseTest {
 
     protected WebDriver driver;
@@ -25,8 +27,18 @@ public class BaseTest {
     }
 
     @AfterClass
-    public void tearDown(){
-        driver.quit();
-    }
+    public void tearDown() {
+        try {
+            // Wait for a few seconds before closing
+            TimeUnit.SECONDS.sleep(3);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
 
+        // Then quit the browser
+        if (driver != null) {
+            driver.quit();
+        }
+
+    }
 }

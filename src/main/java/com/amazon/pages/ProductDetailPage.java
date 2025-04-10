@@ -8,7 +8,7 @@ import java.time.Duration;
 
 public class ProductDetailPage extends BasePage {
 
-    public static By confirmPDP = By.xpath("(//span[@id='productTitle']");
+    public static By confirmPDP = By.xpath("//span[@id='productTitle']");
     public static By addToList = By.xpath("//input[@id='add-to-wishlist-button-submit']");
 
     public static boolean isPDPVisible() {
