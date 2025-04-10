@@ -34,7 +34,7 @@ public class AddToWishlist extends BaseTest {
         com.amazon.pages.HomePage.setSearch("iphone16 pro max");
 
         // Step 6: Click search
-        com.amazon.pages.HomePage.productsListing();
+        com.amazon.pages.HomePage.openProductsListing();
 
         // Step 7: Confirm PLP
         Assert.assertTrue(ProductsListingPage.isPLPVisible(), "Can not navigate to PLP");
@@ -42,10 +42,13 @@ public class AddToWishlist extends BaseTest {
         // Step 8: Click Product
         com.amazon.pages.ProductsListingPage.productDetails();
 
-        // Step 9: Click Add to List
-        com.amazon.pages.ProductsListingPage.openWishConfirmation();
+        // Step 9: Confirm PDP
+        Assert.assertTrue(com.amazon.pages.ProductDetailPage.isPDPVisible(),"PDP is not visible");
 
-        // Step 10: Confirm PLP
+        // Step 10: Click Add to List
+        com.amazon.pages.ProductDetailPage.openWishConfirmation();
+
+        // Step 11: Confirm Add to List
         Assert.assertTrue(WishlistConfirmation.isProductAdded(), "Product is not added to Wishlist");
 
 

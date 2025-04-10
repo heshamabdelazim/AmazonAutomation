@@ -13,7 +13,7 @@ public class PLPTest extends BaseTest {
         com.amazon.pages.HomePage.setSearch("iphone16 pro max");
 
         // Step 2: Click search
-        com.amazon.pages.HomePage.productsListing();
+        com.amazon.pages.HomePage.openProductsListing();
 
         // Step 3: Confirm PLP
         Assert.assertTrue(ProductsListingPage.isPLPVisible(), "Can not navigate to PLP");

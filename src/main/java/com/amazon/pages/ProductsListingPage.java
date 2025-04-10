@@ -25,11 +25,4 @@ public class ProductsListingPage extends BasePage {
 
     }
 
-    public static WishlistConfirmation openWishConfirmation() {
-        click(addToList);
-        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
-        wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//a[normalize-space()='View your list']")));
-        return new WishlistConfirmation();
-
-    }
 }
