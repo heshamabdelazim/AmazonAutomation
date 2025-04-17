@@ -1,7 +1,6 @@
 package com.amazon.base;
 
-import com.amazon.pages._1_BasePage;
-import com.amazon.pages._2_HomePage;
+import com.amazon.pages.*;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.annotations.AfterClass;
@@ -14,6 +13,11 @@ public class BaseTest {
     protected WebDriver driver;
     protected _1_BasePage BasePage;
     protected _2_HomePage HomePage;
+    protected _10_fashionPage FashionPlp;
+    protected _11_ProductPage ProductPage;
+    protected _12_SubProductsPage SubProductpage ;
+
+
     private String url = "https://www.amazon.eg/?language=en_AE";
 
     @BeforeClass
@@ -24,6 +28,10 @@ public class BaseTest {
         BasePage = new _1_BasePage();
         BasePage.setDriver(driver);
         HomePage = new _2_HomePage();
+        FashionPlp = new _10_fashionPage();
+        ProductPage = new _11_ProductPage();
+        SubProductpage = new _12_SubProductsPage();
+
     }
 
     @AfterClass
