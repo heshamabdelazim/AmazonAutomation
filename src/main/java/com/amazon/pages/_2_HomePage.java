@@ -12,6 +12,7 @@ public class _2_HomePage extends _1_BasePage {
     public static By searchField = By.id("twotabsearchtextbox");
     public static By searchButton = By.id("nav-search-submit-button");
     public static By accountPage = By.xpath("//a[@href='https://www.amazon.eg/-/en/gp/css/homepage.html?ref_=nav_youraccount_btn']");
+    public static By fashionBtn = By.xpath("//a[@data-csa-c-content-id='nav_cs_fashion'] ");
 
     public static boolean isAccountLinkVisible() {
         return driver.findElement(accountLink).isDisplayed();
@@ -21,6 +22,10 @@ public class _2_HomePage extends _1_BasePage {
         click(signinLink);
         return new _3_LoginPage();
     }
+    public _10_fashionPage AcessFashion() {
+        click(fashionBtn);
+        return new _10_fashionPage();
+    };
 
     public static void setSearch(String search){
         set(searchField, search);
@@ -39,6 +44,5 @@ public class _2_HomePage extends _1_BasePage {
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
         wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//h1[normalize-space()='Your Account']")));
         return new _5_AccountPage();
-
     }
 }
